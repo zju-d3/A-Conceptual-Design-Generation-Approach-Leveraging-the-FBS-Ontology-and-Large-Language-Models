@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>文本框和复选框示例</title>
+  </head>
+  <body>
+    <h2>文本框和复选框示例</h2>
+
+    <form action="/submit_form" method="post">
+      <!-- 文本框 -->
+      <label for="textbox">文本框:</label>
+      <input type="text" id="textbox" name="textbox" />
+      <br /><br />
+
+      <!-- 复选框 -->
+      <label>选择你喜欢的水果:</label><br />
+      <input type="checkbox" id="apple" name="fruit" value="apple" />
+      <label for="apple">苹果</label><br />
+      <input type="checkbox" id="banana" name="fruit" value="banana" />
+      <label for="banana">香蕉</label><br />
+      <input type="checkbox" id="orange" name="fruit" value="orange" />
+      <label for="orange">橙子</label><br /><br />
+
+      <input type="submit" value="提交" />
+    </form>
+  </body>
+</html>

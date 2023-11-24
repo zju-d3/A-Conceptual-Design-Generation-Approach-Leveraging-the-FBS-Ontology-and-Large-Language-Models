@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+  </head>
+  <body>
+    <h2>输入关键词</h2>
+    <!-- 文本框 -->
+    <form action="/submit_text" method="post">
+      <label for="keyword">关键词:</label>
+      <input type="text" id="keyword" name="keyword" />
+      <input type="submit" value="提交" />
+    </form>
+    <br />
+
+    <blockquote><pre>{{ functions }}</pre></blockquote>
+
+    <h2>输入function</h2>
+    <!-- 文本框 -->
+    <form action="/submit_function" method="post">
+      <label for="function">function:</label>
+      <input type="text" id="function" name="function" />
+      <input type="submit" value="提交" />
+    </form>
+    <br />
+
+    <blockquote><pre>{{ designs }}</pre></blockquote>
+
+    <h2>输入design</h2>
+    <!-- 文本框 -->
+    <form action="/submit_design" method="post">
+      <label for="design">design:</label>
+      <input type="text" id="design" name="design" />
+      <input type="submit" value="提交" />
+    </form>
+    <br />
+
+    <blockquote><pre>{{ structures }}</pre></blockquote>
+
+    <h2>输入structure</h2>
+    <!-- 文本框 -->
+    <form action="/submit_structure" method="post">
+      <label for="textbox">structure:</label>
+      <input type="text" id="structure" name="structure" />
+      <input type="submit" value="提交" />
+    </form>
+    <br />
+
+    <blockquote>{{ selected_function, selected_structure }}</blockquote>
+
+    <!-- function选框 -->
+    <!-- <form action="/submit_function" method="post">
+      <label>选择function:</label><br />
+      {% for function in functions %}
+      <div>
+        <input
+          type="radio"
+          id="function{{ loop.index }}"
+          name="function"
+          value="function{{ loop.index }}"
+        />
+        <label for="function{{ loop.index }}">{{ function }}</label>
+      </div>
+      {% endfor %}
+      <input type="submit" value="提交" />
+    </form>
+    <br /> -->
+  </body>
+</html>
