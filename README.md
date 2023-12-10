@@ -15,22 +15,41 @@ The project running interface diagram is as follows.
 ### Create environment
 
 To create a virtual environment, Python supplies a built in venv module which provides the basic functionality needed for the virtual environment setup. Running the command below will create a virtual environment named "openai-env" inside the current folder you have selected in your terminal / command line:
-`python -m venv env`
+
+```shell
+python -m venv env
+```
+
 Once you’ve created the virtual environment, you need to activate it. On Windows, run:
-`env\Scripts\activate`
+
+```shell
+env\Scripts\activate
+```
+
 On Unix or MacOS, run:
-`source env/bin/activate`
+
+```shell
+source env/bin/activate
+```
 
 ### Installation
 
 Once you have Python 3.7.1 or newer installed and (optionally) a virtual environment setup, the project dependencies library can be installed. From the terminal / command line, run:
-`pip install -r requirements.txt`
+
+```shell
+pip install -r requirements.txt
+```
 
 Setup your API key for projects:
-`export OPENAI_API_KEY='your-api-key-here'`
+
+```shell
+export OPENAI_API_KEY='your-api-key-here'
+```
 
 ### Run
 
 Enter the project file and run the run.py file
-`cd test`
-`python run.py`
+
+```shell
+python run.py
+```
