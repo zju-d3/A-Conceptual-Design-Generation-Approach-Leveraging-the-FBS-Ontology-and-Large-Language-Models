@@ -8,50 +8,193 @@
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
   </head>
   <body>
-    <h2>输入关键词</h2>
-    <!-- 文本框 -->
-    <form action="/submit_text" method="post">
-      <label for="keyword">关键词:</label>
-      <input type="text" id="keyword" name="keyword" />
-      <input type="submit" value="提交" />
-    </form>
-    <br />
+    <div class="interface">
+      <aside>
+        <a href="#">
+          <img alt="logo" src="../static/images/cat.png" />
+        </a>
+        <p class="info-name">Jackson wong</p>
+        <p class="info-email">@Jacksonwang21</p>
 
-    <blockquote><pre>{{ functions }}</pre></blockquote>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="#">Home</a></li>
+            <li><a class="nav-link" href="#">Concepts</a></li>
+            <li><a class="nav-link" href="#">Settings</a></li>
+            <li>
+              <a class="nav-link nav-cta" href="#">Sign out</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <header></header>
+        <div class="sections">
+          <section class="section-f">
+            <h2>Step1: Requirement -> Functions</h2>
+            <div class="input-output">
+              <form action="/submit_text" method="post">
+                <label for="keyword">Input a concept you want to design</label>
+                <div class="input">
+                  <input
+                    class="input-text"
+                    type="text"
+                    id="keyword"
+                    name="keyword"
+                  />
+                </div>
+                <input class="input-submit" type="submit" value="Generate" />
+              </form>
+              <div class="llm-header">
+                <img
+                  class="llm-img"
+                  alt="logo"
+                  src="../static/images/llm.svg"
+                />
+                <div>
+                  <p class="llm-agent">LLM Agent</p>
+                  <p class="llm-info">Please select a generated funciton</p>
+                </div>
+              </div>
+              <div class="llm-output">
+                <!-- <blockquote><pre></pre></blockquote> -->
+                <blockquote><pre>{{ functions }}</pre></blockquote>
+                <a class="continue" href="#">Continue</a>
+              </div>
+            </div>
+          </section>
 
-    <h2>输入function</h2>
-    <!-- 文本框 -->
-    <form action="/submit_function" method="post">
-      <label for="function">function:</label>
-      <input type="text" id="function" name="function" />
-      <input type="submit" value="提交" />
-    </form>
-    <br />
+          <section class="section-b">
+            <h2>Step2: Function -> Behaviors</h2>
+            <div class="input-output">
+              <form action="/submit_function" method="post">
+                <label for="function"
+                  >Input a function from step1 you want to explore</label
+                >
+                <div class="input">
+                  <input
+                    class="input-text"
+                    type="text"
+                    id="function"
+                    name="function"
+                  />
+                </div>
+                <input class="input-submit" type="submit" value="Generate" />
+              </form>
+              <div class="llm-header">
+                <img
+                  class="llm-img"
+                  alt="logo"
+                  src="../static/images/llm.svg"
+                />
+                <div>
+                  <p class="llm-agent">LLM Agent</p>
+                  <p class="llm-info">Please select a generated behavior</p>
+                </div>
+              </div>
+              <div class="llm-output">
+                <!-- <blockquote><pre></pre></blockquote> -->
+                <blockquote><pre>{{ designs }}</pre></blockquote>
+                <a class="continue" href="#">Continue</a>
+              </div>
+            </div>
+          </section>
 
-    <blockquote><pre>{{ designs }}</pre></blockquote>
+          <section class="section-s">
+            <h2>Step3: Behavior -> Structures</h2>
+            <div class="input-output fs">
+              <form action="/submit_design" method="post">
+                <label for="design"
+                  >Input a behavior from step2 you want to explore</label
+                >
+                <div class="input">
+                  <input
+                    class="input-text"
+                    type="text"
+                    id="design"
+                    name="design"
+                  />
+                </div>
+                <input class="input-submit" type="submit" value="Generate" />
+              </form>
+              <div class="llm-header">
+                <img
+                  class="llm-img"
+                  alt="logo"
+                  src="../static/images/llm.svg"
+                />
+                <div>
+                  <p class="llm-agent">LLM Agent</p>
+                  <p class="llm-info">Please select a generated structure</p>
+                </div>
+              </div>
+              <div class="llm-output">
+                <!-- <blockquote><pre></pre></blockquote> -->
+                <blockquote><pre>{{ structures }}</pre></blockquote>
+                <a class="continue" href="#">Continue</a>
+              </div>
+            </div>
+          </section>
 
-    <h2>输入design</h2>
-    <!-- 文本框 -->
-    <form action="/submit_design" method="post">
-      <label for="design">design:</label>
-      <input type="text" id="design" name="design" />
-      <input type="submit" value="提交" />
-    </form>
-    <br />
+          <section class="section-fs">
+            <h2>Select Function-Structure pair</h2>
+            <div class="input-output fs">
+              <!-- <form action="/submit_structure" method="post">
+                <label for="textbox">structure:</label>
+                <div class="input">
+                  <input
+                    class="input-text"
+                    type="text"
+                    id="structure"
+                    name="structure"
+                  />
+                </div>
+                <input class="input-submit" type="submit" value="Generate" />
+              </form> -->
+              <div class="input-pair">
+                <input
+                  class="input-text"
+                  type="text"
+                  id="keyword"
+                  name="keyword"
+                />
+                <a class="comfirm" href="#">Comfirm</a>
+              </div>
+              <div class="input-pair">
+                <input
+                  class="input-text"
+                  type="text"
+                  id="keyword"
+                  name="keyword"
+                />
+                <a class="comfirm" href="#">Comfirm</a>
+              </div>
+              <div class="input-pair">
+                <input
+                  class="input-text"
+                  type="text"
+                  id="keyword"
+                  name="keyword"
+                />
+                <a class="comfirm" href="#">Comfirm</a>
+              </div>
 
-    <blockquote><pre>{{ structures }}</pre></blockquote>
+              <!-- <div class="llm-output pair">
+                <blockquote>
+                  <pre>
+{{ selected_function, selected_behavior, selected_structure }}</pre
+                  >
+                </blockquote>
+              </div> -->
 
-    <h2>输入structure</h2>
-    <!-- 文本框 -->
-    <form action="/submit_structure" method="post">
-      <label for="textbox">structure:</label>
-      <input type="text" id="structure" name="structure" />
-      <input type="submit" value="提交" />
-    </form>
-    <br />
-
-    <blockquote>{{ selected_function, selected_structure }}</blockquote>
-
+              <!-- <blockquote>
+                {{ selected_function, selected_structure }}
+              </blockquote> -->
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
     <!-- function选框 -->
     <!-- <form action="/submit_function" method="post">
       <label>选择function:</label><br />
